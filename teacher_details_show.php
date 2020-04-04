@@ -24,11 +24,14 @@ try {
       echo "<body><u><h1 align='center'>TEACHER RECORDS</h1></u>";
       echo "<table border='1' align='center'>";
       echo "<tr><th>ENROLL No.</th><th>NAME</th><th>DOB</th><th>CONTACT</th><th>EMAIL</th><th>QUALIFICATION</th><th>ADDRESS</th>
-            <th>STATUS</th><th>PASSWORD</th><th>CLASS</th><th>SECTION</th><th>IMAGE</th><th>MODIFY</th></tr>";
+            <th>STATUS</th><th>PASSWORD</th><th>CLASS</th><th>SECTION</th><th>IMAGE</th><th>ACTIVE</th><th>MODIFY</th></tr>";
 
       foreach($stmt->fetchAll() as $itr)
       {
-        echo "<tr>";
+        if($itr['t_active']=='false')
+          echo "<tr bgcolor='gray'>";
+        else
+          echo "<tr>";
         foreach($itr as $var)
         {
           if($var)
@@ -36,7 +39,10 @@ try {
           else
             echo "<td>None</td>";
         }
-        echo "<td align='center'><input type='button' id='".$itr["t_enrol_no"]."' value='Edit'></td>";
+        if($itr['t_active']=='true')
+          echo "<td align='center'><input type='button' id='".$itr["t_enrol_no"]."' value='Edit'></td>";
+        else
+          echo "<td align='center'><input type='button' id='".$itr["t_enrol_no"]."' value='Edit' disabled></td>";
         echo "</tr>";
       }
     }

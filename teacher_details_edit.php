@@ -183,13 +183,13 @@ $conn = null;
       </div>      
       <div class="row">
         <div class="col" style="width: 210px">
-        <input type="submit" value="Update" name="update_member" id="update_teacher">
+        <input type="submit" value="Update" name="update" id="update_teacher">
         </div>
         <div class="col" style="width: 200px">
-        <input type="submit" value="Cancel" name="cancel_update" id="cancel_update">
+        <input type="submit" value="Cancel" name="cancel" id="cancel_update">
         </div>
         <div class="col" style="width: 200px">
-        <input type="submit" value="Remove" name="remove_member" id="remove_teacher">
+        <input type="submit" value="Remove" name="remove" id="remove_teacher">
         </div>
       </div>
     </form>
