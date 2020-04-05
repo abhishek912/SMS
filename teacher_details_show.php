@@ -1,5 +1,6 @@
-<head>
-  <script src="jquery-3.4.1.slim.js"></script>
+<?php
+include("dashboard_admin.php");
+?>
   <script >
     $(document).ready(function(){
       $('input[type="button"]').click(function(){
@@ -10,8 +11,7 @@
       });
     });
   </script>
-</head>
-
+<div class="form_container">
 <?php
 require 'config.php';
 
@@ -21,7 +21,7 @@ try {
     $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
     if($result)
     {
-      echo "<body><u><h1 align='center'>TEACHER RECORDS</h1></u>";
+      echo "<u><h1 align='center'>TEACHER RECORDS</h1></u>";
       echo "<table border='1' align='center'>";
       echo "<tr><th>ENROLL No.</th><th>NAME</th><th>DOB</th><th>CONTACT</th><th>EMAIL</th><th>QUALIFICATION</th><th>ADDRESS</th>
             <th>STATUS</th><th>PASSWORD</th><th>CLASS</th><th>SECTION</th><th>IMAGE</th><th>ACTIVE</th><th>MODIFY</th></tr>";
@@ -51,5 +51,6 @@ catch(PDOException $e) {
     echo "Error: " . $e->getMessage();
 }
 $conn = null;
-echo "</table></body>";
+echo "</table></div>";
+include("footer.php");
 ?>
