@@ -1,5 +1,6 @@
 <?php
 require 'config.php';
+include("dashboard_admin.php");
 $id = $_GET["id"];
 try {
     $stmt = $conn->prepare("SELECT *FROM student WHERE s_admin_no='$id'");
@@ -13,13 +14,6 @@ catch(PDOException $e) {
 $conn = null;
 ?>
 
-<head>
-  <script src="jquery-3.4.1.slim.js"></script>
-  <script src="script.js"></script>
-  <link rel="stylesheet" href="design.css">
-</head>
-
-<body>
   <div class="form_container">
     <form method="POST" action="update_student.php" enctype="multipart/form-data">
       <div>
@@ -137,4 +131,6 @@ $conn = null;
       </div>
     </form>
   </div>
-</body>
+<?php
+include("footer.php");
+?>

@@ -1,29 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <script src="jquery-3.4.1.slim.js"></script>
-  <script src="script.js"></script>
-
-  <script>
-    $(document).ready(function(){
-      $('input[name="t_status"]').change(function(){
-        var container = $(document.createElement('div'));
-        if(this.value == "CT")
-        {
-          $(container).append("<table><tr><td><label>Class</label></td><td> : </td><td><input type='text' name='t_class' id='t_class'></td></tr><tr><td><label>Section</label></td><td> : </td><td><input type='text' name='t_section' id='t_section'></td></tr></table>");
-          $("#status").append($(container));
-        }
-        else if(this.value == "RT")
-        {
-          $("#status div").remove();
-        }
-      });
-    });
-  </script>
-  <link rel="stylesheet" href="design.css">
-</head>
-
-<body>
+<?php
+include("dashboard_admin.php");
+?>
   <div class="form_container">
     <form action="add_teacher.php" method="post" enctype="multipart/form-data">
       <div>
@@ -127,5 +104,6 @@
       </div>
     </form>
   </div>
-</body>
-</html>
+  <?php
+  include("footer.php");
+  ?>

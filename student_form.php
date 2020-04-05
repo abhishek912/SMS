@@ -1,10 +1,6 @@
-<head>
-    <script src="jquery-3.4.1.slim.js"></script>
-    <script src="script.js"></script>
-    <link rel="stylesheet" href="design.css">
-</head>
-
-<body>
+<?php
+include("dashboard_admin.php");
+?>
   <div class="form_container">
     <form method="POST" action="add_student.php" enctype="multipart/form-data">
       <div>
@@ -62,10 +58,10 @@
         <div class="col">
           <label for="enrol">Student Status *</label>
         </div>
-        <div class="col" style="width: 75%;">
-          <input type="text" id="class" name="s_class" placeholder="Class.." required style="width: 100px;">
-          <input type="text" id="section" name="s_section" placeholder="Section.." required style="width: 100px;">
-          <input type="text" id="roll" name="s_roll" placeholder="Roll No.." required style="width: 100px;">
+        <div class="col" style="width: 70%;">
+          <input type="text" id="class" name="s_class" placeholder="Class.." required style="width: 30%;">
+          <input type="text" id="section" name="s_section" placeholder="Section.." required style="width: 30%;">
+          <input type="text" id="roll" name="s_roll" placeholder="Roll No.." required style="width: 30%;">
         </div>
       </div>
 
@@ -114,4 +110,6 @@
       </div>
     </form>
   </div>
-</body>
+  <?php
+  include("footer.php");
+  ?>

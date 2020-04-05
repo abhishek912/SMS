@@ -1,4 +1,5 @@
 <?php
+include("dashboard_admin.php");
 require 'config.php';
 $id = $_GET["id"];
 try {
@@ -13,10 +14,6 @@ catch(PDOException $e) {
 $conn = null;
 ?>
 
-<head>
-  <script src="jquery-3.4.1.slim.js"></script>
-  <script src="script.js"></script>
-  <link rel="stylesheet" href="design.css">
   <script >
     var t_status=0;
     $(document).ready(function(){
@@ -41,9 +38,8 @@ $conn = null;
       });
     });
   </script>
-</head>
+  
 
-<body>
   <div class="form_container">
     <form action="update_teacher.php" method="post" enctype="multipart/form-data">
       <div>
@@ -194,4 +190,6 @@ $conn = null;
       </div>
     </form>
   </div>
-</body>
+<?php
+include("footer.php");
+?>
